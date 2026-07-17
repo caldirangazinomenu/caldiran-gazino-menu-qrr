@@ -277,3 +277,5 @@ function getCategoryName(category) {
 
   return categories[category] || category;
 }
+  return categories[category] || category;
+}
