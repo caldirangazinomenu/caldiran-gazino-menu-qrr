@@ -2,11 +2,9 @@ const menuData = {
   sicak: [],
   soguk: [],
   tatli: [],
-  fastfood: []
-  pastane: []
-  izgara: []
-  pide: []
-  
+  yiyecek: [],
+  izgaravepide: [],
+  dondurma: []
 };
 
 async function loadMenuProducts() {
@@ -22,11 +20,10 @@ async function loadMenuProducts() {
       renderProducts("sicak");
       renderProducts("soguk");
       renderProducts("tatli");
-      renderProducts("fastfood");
-      renderProducts("pastane");
-      renderProducts("izgara");
-      renderProducts("pide");
-    
+      renderProducts("yiyecek");
+      renderProducts("izgaravepide");
+      renderProducts("dondurma");
+      
       return;
     }
 
@@ -39,10 +36,9 @@ async function loadMenuProducts() {
     renderProducts("sicak");
     renderProducts("soguk");
     renderProducts("tatli");
-    renderProducts("fastfood");
-    renderProducts("pastane");
-    renderProducts("izgara");
-    renderProducts("pide");
+    renderProducts("yiyecek");
+    renderProducts("izgaravepide");
+    renderProducts("dondurma");
 
   } catch (error) {
     alert("Menü yüklenirken hata oluştu: " + error.message);
@@ -58,13 +54,19 @@ function createCard(product) {
         onerror="this.src='https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800';"
       >
 
-      <div class="card-body">
-        <h3>${product.name}</h3>
-        <p class="price">${product.price} ₺</p>
-      </div>
-    </div>
-  `;
-}
+     div class="card-body">
+
+<h3>${product.name}</h3>
+
+<p class="description">
+${product.description ?? ""}
+</p>
+
+<p class="price">
+${product.price} ₺
+</p>
+
+</div>
 
 function renderProducts(category) {
   const container = document.querySelector(`#${category} .products`);
