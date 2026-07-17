@@ -298,6 +298,7 @@
   
   
   .card img{
+  transition:.4s;
   
   
   width:100%;
@@ -498,3 +499,25 @@
   background:#2F382C;
   
   }
+
+.search-box{
+    max-width:600px;
+    margin:25px auto;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+    background:#495545;
+    color:#fff;
+    border:1px solid #B89650;
+}
+
+.search-box input::placeholder{
+    color:#d8ccb5;
+}
