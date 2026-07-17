@@ -83,8 +83,9 @@ function renderProducts(category) {
   }
 
   menuData[category].forEach(function (product) {
-    container.innerHTML += createCard(product);
-  });
-}
+container.insertAdjacentHTML(
+"beforeend",
+createCard(product)
+);
 
 loadMenuProducts();
